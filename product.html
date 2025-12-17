@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="resources/images/logo.png" alt="Logo">
+
+    <nav id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="cart.html">Cart</a>
+    </nav>
+
+    <button id="menuBtn">☰</button>
+</header>
+
+<main>
+    <p style="text-align:center;">
+        Show stock:
+        <select onchange="filterStock(this.value)">
+            <option value="all">All</option>
+            <option value="good-stock">Good stock</option>
+            <option value="last-few">Last few</option>
+            <option value="out-of-stock">Out of stock</option>
+        </select>
+    </p>
+
+    <h1>Our Products</h1>
+    <div id="productList"></div>
+</main>
+
+<footer>
+    <div class="footer-container">
+
+        <div class="footer-column">
+        <h3>Contact</h3>
+        <p>Email: info@uclancyprus.ac.cy</p>
+        <p>Phone: +357 24 694000</p>
+    </div>
+
+        <div class="footer-column">
+            <h3>Location</h3>
+            <p>12 – 14 University Avenue Pyla, 7080  </p>
+            <p>Larnaka, Cyprus </p>
+        </div>
+
+        <div class="footer-column footer-right">
+            <p>Cyprus</p>
+            <p>Student Shop © 2025</p>
+        </div>
+
+    </div>
+</footer>
+<script src="main.js"></script>
+<script src="products.js"></script>
+
+</body>
+</html>
 
