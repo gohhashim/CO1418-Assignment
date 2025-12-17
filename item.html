@@ -1,34 +1,53 @@
-const item = JSON.parse(sessionStorage.getItem("selectedProduct"));
-const box = document.getElementById("itemBox");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-box.innerHTML = `
-    <h2>${item[0]}</h2>
-    <p>Color: ${item[1]}</p>
-    <p>Price: ${item[2]}</p>
-    <img src="${item[4]}" width="180">
-    <p>${item[5]}</p>
+<header>
+    <img src="resources/images/logo.png" alt="Logo">
 
-    <button class="addBtn" id="add">Add to Cart</button>
-`;
+    <nav id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="cart.html">Cart</a>
+    </nav>
 
-const addBtn = document.getElementById("add");
+    <button id="menuBtn">☰</button>
+</header>
 
-if (item[3] === "out-of-stock") {
-    addBtn.disabled = true;
-    addBtn.innerText = "Unavailable";// για να μην μπορεις να επιλεξεις ενα ιτεμ που δεν ειναι available
-    addBtn.style.background = "gray";
-}
+<main>
+    <h1>Item Details</h1>
+    <div id="itemBox"></div>
+</main>
 
-//Πιο κάτω χρησιμοποιώ JSON για το add to cart και έμαθα πώς γίνεται η πρόσθεση από αυτό.https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON
-addBtn.onclick = function () {
-    if (item[3] === "out-of-stock") {
-        alert("This item is unavailable.");
-        return;
-    }
+<footer>
+    <div class="footer-container">
 
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push(item);
-    localStorage.setItem("cart", JSON.stringify(cart));
+        <div class="footer-column">
+            <h3>Contact</h3>
+            <p>Email: info@uclancyprus.ac.cy</p>
+            <p>Phone: +357 24 694000</p>
+        </div>
 
-    alert("Item added to cart!");
-};
+        <div class="footer-column">
+            <h3>Location</h3>
+            <p>12 – 14 University Avenue Pyla, 7080  </p>
+            <p>Larnaka, Cyprus </p>
+        </div>
+
+        <div class="footer-column footer-right">
+            <p>Cyprus</p>
+            <p>Student Shop © 2025</p>
+        </div>
+
+    </div>
+</footer>
+
+<script src="main.js"></script>
+<script src="item.js"></script>
+</body>
+</html>
